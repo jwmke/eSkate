@@ -8,7 +8,6 @@ import * as data from '../ui/style/map.json';
 import NavBar from '../ui/components/navbar';
 
 type MapProps = {
-  setPage: Function;
 };
 
 export default function Map(props: MapProps) {
@@ -16,8 +15,16 @@ export default function Map(props: MapProps) {
   
     return (
       <View style={styles.container}>
-        <MapView style={styles.map} customMapStyle={mapStyle} showsCompass={false}/>
-        <NavBar selected={'map'} setPage={props.setPage}/>
+        <MapView style={styles.map} 
+          customMapStyle={mapStyle} 
+          showsCompass={false} 
+          initialRegion={{
+            latitude: 43.040758,
+            longitude: -87.904113,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}/>
+        <NavBar selected={'map'}/>
         <StatusBar style="inverted" />
       </View>
     );
@@ -32,17 +39,5 @@ export default function Map(props: MapProps) {
       height: '100%',
       zIndex: 1,
     },
-    // searchBox: {
-    //   height: 55,
-    //   width: 55,
-    //   top: 45,
-    //   right: 15,
-    //   position: "absolute",
-    //   backgroundColor: "#fff",
-    //   zIndex: 2,
-    //   borderRadius: 10,
-    //   alignItems: 'center',
-    //   justifyContent: 'center'
-    // }
   });
   

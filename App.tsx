@@ -1,15 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import Map from './pages/map';
-import { useState } from 'react';
+import Home from './pages/home';
+import Profile from './pages/profile'; 
+import { createContext, useState } from 'react';
+
+export const PageContext = createContext(null);
 
 export default function App() {
   const [page, setPage] = useState('home');
 
+  const togglePage = (p:string) => {
+    setPage(p);
+  }
+
   return (
-    <View style={styles.container}>
-      <Map setPage={() => setPage}/>
-    </View>
+    <PageContext.Provider value={{ togglePage } as any}>
+      <View style={styles.container}>
+        {page === 'home' ? <Home/> 
+        : page === 'map' ? <Map/> 
+        : <Profile/>}  
+      </View>
+    </PageContext.Provider>
   );
 }
 
