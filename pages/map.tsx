@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import MapView from 'react-native-maps';
-import { LinearGradient } from 'expo-linear-gradient';
 
 import * as data from '../ui/style/map.json';
 
 import NavBar from '../ui/components/navbar';
+import FilterSwap from '../ui/components/filterSwap';
 
 type MapProps = {
 };
@@ -24,6 +24,7 @@ export default function Map(props: MapProps) {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}/>
+        <FilterSwap />
         <NavBar selected={'map'}/>
         <StatusBar style="inverted" />
       </View>
