@@ -19,7 +19,7 @@ export default function NavBar(props: NavBarProps) {
     <View style={styles.background}>
         <TouchableOpacity onPress={() => togglePage('home')}>
             {props.selected === 'home' ? <View style={styles.navButton}>
-                <MaskedView maskElement={<Ionicons name="home-outline" size={30} color="white" />}>
+                <MaskedView maskElement={<Ionicons name="home" size={30} color="white" />}>
                     <LinearGradient style={{width: 30, height: 30}}
                                 colors={['#fe4773', '#8f30a1']}
                                 start={{ x: 0, y: 0 }}
@@ -39,7 +39,7 @@ export default function NavBar(props: NavBarProps) {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => togglePage('map')}>
             {props.selected === 'map' ? <View style={styles.navButton}>
-                <MaskedView maskElement={<Ionicons name="map-outline" size={30} color="white" />}>
+                <MaskedView maskElement={<Ionicons name="map" size={30} color="white" />}>
                     <LinearGradient style={{width: 30, height: 30}}
                                 colors={['#fe4773', '#8f30a1']}
                                 start={{ x: 0, y: 0 }}
@@ -59,7 +59,7 @@ export default function NavBar(props: NavBarProps) {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => togglePage('profile')}>
             {props.selected === 'profile' ? <View style={styles.navButton}>
-                <MaskedView maskElement={<Ionicons name="person-outline" size={30} color="white" />}>
+                <MaskedView maskElement={<Ionicons name="person" size={30} color="white" />}>
                     <LinearGradient style={{width: 30, height: 30}}
                                 colors={['#fe4773', '#8f30a1']}
                                 start={{ x: 0, y: 0 }}
